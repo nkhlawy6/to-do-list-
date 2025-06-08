@@ -1,10 +1,9 @@
-
 * {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border:none;
+  border: none;
   outline: none;
 }
 
@@ -15,11 +14,15 @@ body {
 
 h1 {
   text-align: center;
-  margin-bottom:50px;
+  margin-bottom: 50px;
   padding: 30px;
   font-size: 4rem;
   text-transform: capitalize;
-  background-image: linear-gradient(to top, rgba(93, 93, 136, 0.39), rgba(64, 64, 251, 0.721));
+  background-image: linear-gradient(
+    to top,
+    rgba(93, 93, 136, 0.39),
+    rgba(64, 64, 251, 0.721)
+  );
 }
 .task {
   display: flex;
@@ -41,18 +44,20 @@ p {
   cursor: pointer;
   font-size: 26px;
   padding: 5px;
-  transition:var(--transition-0-5);
+  transition: var(--transition-0-5);
 }
 
 .icon:hover {
   font-size: 29px;
 }
 .icon-star,
-.icon-trash-o,.icon-angry {
+.icon-trash-o,
+.icon-angry {
   opacity: 0.4;
 }
 .icon-star:hover,
-.icon-trash-o:hover,.icon-angry:hover{
+.icon-trash-o:hover,
+.icon-angry:hover {
   opacity: 1;
 }
 .icon-star:hover {
@@ -66,45 +71,43 @@ p {
   color: green;
 }
 
-h2.heading{
-    margin-top: 100px;
-    font-size:40px;
-    text-align: center;
-    margin-bottom: 40px;
-     
+h2.heading {
+  margin-top: 100px;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
-h2.heading:hover{
-  animation: heading-animation 3s infinite linear;
+body:hover h2.heading {
+  animation: gradient-text-animation 3s infinite linear;
   cursor: pointer;
 }
 
-form{
- text-align: center;
+form {
+  text-align: center;
 }
 
-form input{
-    padding: 10px 20px;
-    border-radius: 6px;
-    width:35vw;
-    
+form input {
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: 35vw;
 }
-form input::placeholder{
+form input::placeholder {
   text-align: center;
   font-size: 19px;
 }
 
-button{
-    all:unset;
+button {
+  all: unset;
 }
-form button.icon-check{
-    position: relative;
-    top:8px;
-    color:rgba(0, 128, 0, 0.559);
-    font-size: 30px;
-    cursor: pointer;
-    transition: var(--transition-0-5);
+form button.icon-check {
+  position: relative;
+  top: 8px;
+  color: rgba(0, 128, 0, 0.559);
+  font-size: 30px;
+  cursor: pointer;
+  transition: var(--transition-0-5);
 }
 
-form button.icon-check:hover{
-   color:green;
+form button.icon-check:hover {
+  color: green;
 }
