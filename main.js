@@ -18,3 +18,12 @@ form.addEventListener("submit", (eo) => {
   input1.value='';
   console.log(eo);
 });
+
+tasks.addEventListener('click',(eo) => { 
+  if(eo.target.className=='icon-trash-o icon'){
+     eo.target.parentElement.parentElement.remove()
+  }else{
+    console.log('first')
+  }
+  
+ })
