@@ -4,16 +4,42 @@ let input1 = document.getElementById("input1");
 let form = document.querySelector("form");
 
 tasks.addEventListener("click", (eo) => {
-  if (eo.target.className == "icon-trash-o icon") {
+switch (eo.target.className) {
+  case "icon-trash-o icon":
     eo.target.parentElement.parentElement.remove();
-  } else if (eo.target.className == "icon-angry icon") {
+    break;
+
+  case "icon-angry icon":
     eo.target.classList.add("dn");
     eo.target.parentElement.parentElement
       .getElementsByClassName("task-text")[0]
       .classList.add("finish");
-    let heartIcon = `<span class="icon-heart"></span>`;
-    eo.target.parentElement.innerHTML += heartIcon;
-  }
+    eo.target.parentElement.innerHTML += `<span class="icon-heart"></span>`;
+    break;
+
+  case "icon-heart":
+    eo.target.classList.add("dn");
+    eo.target.parentElement.parentElement
+      .getElementsByClassName("task-text")[0]
+      .classList.remove("finish");
+    eo.target.parentElement.innerHTML += `<span class="icon-angry icon"></span>`;
+    break;
+
+  case "icon-star icon":
+    eo.target.classList.add("orange");
+    eo.target.parentElement.parentElement.prepend(eo.target.parentElement);
+    break;
+
+  case "icon-star icon orange":
+    eo.target.classList.remove("orange");
+    eo.target.parentElement.parentElement.append(eo.target.parentElement);
+    break;
+
+  default:
+    console.log('first')
+    break;
+}
+
 });
 
 form.addEventListener("submit", (eo) => {
@@ -21,7 +47,7 @@ form.addEventListener("submit", (eo) => {
   let task = `      
   <div class="task">
         <span class="icon-star icon"></span>
-        <p class='task-text'>${input1.value}</p>
+        <p lang='ar' class='task-text'>${input1.value}</p>
         <div>
           <span class="icon-trash-o icon"></span>
          
